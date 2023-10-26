@@ -12,8 +12,6 @@ class BaseEndpoint:
         
 
     def get(self, endpoint, headers={}):
-        print(f'{self.BASE_URL}/{endpoint}')
-        print({**self.headers, **headers})
         return requests.get(
             f'{self.BASE_URL}/{endpoint}',
             headers={**self.headers, **headers}
