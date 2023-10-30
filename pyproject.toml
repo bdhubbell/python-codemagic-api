@@ -1,0 +1,28 @@
+[project]
+name = 'python_codemagic_api'
+version = '0.0.2'
+authors = [
+    {name = 'Benjamin Hubbell', email = 'bdhubbell@icloud.com'},
+]
+description = 'Python API wrapper for Codemagic'
+readme = 'README.md'
+license = 'MIT'
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python :: 3',
+    'Topic :: Software Development :: Libraries'
+]
+dependencies = [
+    'requests',
+]
+
+
+[tool.setuptools.packages.find]
+where = ['src']
+include = ['python_codemagic_api']
+
+[build-system]
+requires = ['setuptools']
+build-backend = 'setuptools.build_meta'
