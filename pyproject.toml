@@ -1,6 +1,6 @@
 [project]
 name = 'python_codemagic_api'
-version = '0.0.4'
+version = '0.0.5'
 authors = [
     {name = 'Benjamin Hubbell', email = 'bdhubbell@icloud.com'},
 ]
