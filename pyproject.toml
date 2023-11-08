@@ -21,7 +21,7 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ['src']
-include = ['python_codemagic_api*']
+include = ['python_codemagic_api']
 
 [build-system]
 requires = ['setuptools']
