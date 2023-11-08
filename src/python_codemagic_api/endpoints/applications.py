@@ -31,10 +31,10 @@ class Applications(BaseEndpoint):
     def create_applcation_from_private_repository(self, repository_url, ssh_key, project_type, team_id):
         pass
 
-    def get_env_vars(self, app_id):
-        return self.get(f'{self.ENDPOINT}/{app_id}/variables')
+    def get_env_vars(self):
+        return self.get(f'{self.ENDPOINT}/{self.app_id}/variables')
 
-    def create_env_var(self, app_id, key, value, group=None, workflow_id=None, is_secure=False):
+    def create_env_var(self, key, value, group=None, workflow_id=None, is_secure=False):
         data = {
             'key': key,
             'value': value,
@@ -47,16 +47,16 @@ class Applications(BaseEndpoint):
         if workflow_id:
             data['workflowId'] = workflow_id
 
-        return self.post(f'{selfENDPOINT}/{app_id}/variables', data)
+        return self.post(f'{self.ENDPOINT}/{self.app_id}/variables', data)
 
-    def update_env_var(app_id, env_var_id, value, is_secure=False):
+    def update_env_var(self, env_var_id, value, is_secure=False):
         return self.post(
-            f'{self.ENDPOINT}/{app_id}/variables/{env_var_id}',
+            f'{self.ENDPOINT}/{self.app_id}/variables/{env_var_id}',
             {
                 'value': value,
                 'secure': is_secure
             }
         )
 
-    def delete_env_var(app_id, env_var_id):
+    def delete_env_var(self, app_id, env_var_id):
         return self.delete(f'{self.ENDPOINT}/{app_id}/variables/{env_var_id}')

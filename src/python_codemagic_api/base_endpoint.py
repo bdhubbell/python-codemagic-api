@@ -1,3 +1,4 @@
+import json
 import requests
 
 class BaseEndpoint:
@@ -7,7 +8,8 @@ class BaseEndpoint:
     def __init__(self, api_token):
         self.api_token = api_token
         self.headers = {
-            'x-auth-token': api_token
+            'X-Auth-Token': api_token,
+            'Content-Type': 'application/json'
         }
         
 
@@ -17,16 +19,16 @@ class BaseEndpoint:
             headers={**self.headers, **headers}
         )
 
-    def post(self, endpoint, headers={}, data={}):
+    def post(self, endpoint, data, headers={}):
         return requests.post(
             f'{self.BASE_URL}/{endpoint}',
+            data=json.dumps(data),
             headers={**self.headers, **headers},
-            data=data
         )
 
-    def delete(self, endpoint, headers={}, data={}):
+    def delete(self, endpoint, data, headers={}):
         return requests.delete(
             f'{self.BASE_URL}/{endpoint}',
+            data=json.dumps(data),
             headers={**self.headers, **headers},
-            data=data
         )

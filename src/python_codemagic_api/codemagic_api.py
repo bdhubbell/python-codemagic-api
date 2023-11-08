@@ -3,6 +3,7 @@ from python_codemagic_api.endpoints.artifacts import Artifacts
 from python_codemagic_api.endpoints.builds import Builds
 from python_codemagic_api.endpoints.caches import Caches
 from python_codemagic_api.endpoints.teams import Teams
+from python_codemagic_api.utils.applications_utils import ApplicationsUtils
 
 class CodemagicApi:
 
@@ -13,3 +14,4 @@ class CodemagicApi:
         self.caches = Caches(api_token, app_id)
         self.teams = Teams(api_token, app_id)
 
+        self.applications_utils = ApplicationsUtils(self.applications)

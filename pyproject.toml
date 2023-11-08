@@ -1,12 +1,12 @@
 [project]
 name = 'python_codemagic_api'
-version = '0.0.2'
+version = '0.0.3'
 authors = [
     {name = 'Benjamin Hubbell', email = 'bdhubbell@icloud.com'},
 ]
 description = 'Python API wrapper for Codemagic'
 readme = 'README.md'
-license = 'MIT'
+license = {file = 'LICENSE'}
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
     'Intended Audience :: Developers',
